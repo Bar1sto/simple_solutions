@@ -25,7 +25,7 @@ def buy_item(request, id):
         success_url=request.build_absolute_uri('/success/'),
         cancel_url=request.build_absolute_uri('/cancel/'),
     )
-    print(item.stripe_item_id)
+    print('stripe_item_id:' + item.stripe_item_id, 'item name:' + item.name)
     return JsonResponse({'session_id': session.id})
 
 def item_detail(request, id):
@@ -36,3 +36,7 @@ def item_detail(request, id):
         'item': item,
         'stripe_publishable_key': settings.STRIPE_PUBLISHABLE_KEY,
     })
+
+def index(request):
+    items = Item.objects.all()
+    return render(request, 'items/index.html', {'items': items})

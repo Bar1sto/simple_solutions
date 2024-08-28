@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+  </head>
+  <body>
+    <h1>Тестовое для - Простое решение</h1>
+    <p>Домашнаяя страница</p>
+    <ul>
+      {% for item in items %}
+        <li>
+          <a href="{% url 'item_detail' id=item.id %}">{{ item.name }}</a>
+          - {{ item.description }}
+        </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
