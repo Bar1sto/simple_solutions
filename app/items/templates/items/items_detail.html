@@ -1,4 +1,4 @@
-{% comment %} <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -8,7 +8,7 @@
 <body>
     <h1>{{ item.name }}</h1>
     <p>{{ item.description }}</p>
-    <p>Price: ${{ item.price }}</p>
+    <p>Price: {{ item.price }} {{ item.currency }}</p>
     <button id="checkout-button">Buy</button>
 
     <script src="https://js.stripe.com/v3/"></script>
@@ -28,9 +28,9 @@
         });
     </script>
 </body>
-</html> {% endcomment %}
+</html> 
 
- <!DOCTYPE html>
+ {% comment %} <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -46,4 +46,4 @@
         <button type="submit">Buy</button>
     </form>
 </body>
-</html> 
+</html>  {% endcomment %}
